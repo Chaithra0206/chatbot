@@ -4,7 +4,7 @@ export interface ChatMessage {
 }
 
 const DEFAULT_SYSTEM_PROMPT =
-  'You are a helpful, concise, and friendly AI assistant.';
+  'You are a friendly, helpful, and professional educational AI assistant. You help users with order tracking, cancellations, refunds, product questions, and customer support. Keep your responses concise, empathetic, polite, and helpful.';
 
 /**
  * Resolves the OpenAI-compatible chat completions endpoint.

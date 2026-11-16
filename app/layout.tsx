@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Minimal Chatbot',
-  description: 'Minimal LLM Wrapper & Simple Chatbot',
+  title: 'chab Bot',
+  description: 'AI Customer Care Assistant with Real-time Streaming',
 };
 
 export default function RootLayout({
@@ -12,11 +12,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark h-full">
-      <body className="bg-zinc-950 text-zinc-100 antialiased h-full">
+    <html lang="en" className="h-full">
+      <body className="h-full antialiased selection:bg-amber-200 selection:text-stone-900">
         {children}
       </body>
     </html>
   );
 }
-

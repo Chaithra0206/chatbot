@@ -464,11 +464,11 @@ export default function CustomerCareChat() {
 
             <div>
               <h1 className="text-sm font-bold text-slate-900 tracking-tight flex items-center gap-1.5">
-                <span>{currentSession?.title || 'Customer Care Bot'}</span>
+                <span>{currentSession?.title || ' Bot'}</span>
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               </h1>
               <p className="text-[11px] text-slate-500">
-                Customer Care Bot • Always active
+                Bot • Always active
               </p>
             </div>
           </div>
@@ -490,7 +490,7 @@ export default function CustomerCareChat() {
             {/* Session Started Banner */}
             <div className="text-center my-2">
               <span className="inline-block text-[11px] font-medium text-slate-400 bg-slate-50 border border-slate-200/60 rounded-full px-3 py-1">
-                Connected with Customer Care Bot
+                Connected with Bot
               </span>
             </div>
 

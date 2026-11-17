@@ -13,7 +13,7 @@ export interface ChatSession {
 
 const STORAGE_KEY = 'customer_care_chat_sessions_v2';
 const ACTIVE_SESSION_KEY = 'customer_care_active_session_id_v2';
-const INITIAL_BOT_GREETING = "Hi, I'm Customer Care Bot! How can I help you today? 😊";
+const INITIAL_BOT_GREETING = "Hi, I'm Bot! How can I help you today? 😊";
 
 function createNewSession(): ChatSession {
   return {

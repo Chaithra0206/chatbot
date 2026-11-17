@@ -13,7 +13,7 @@ export interface ChatSession {
 
 const STORAGE_KEY = 'customer_care_chat_sessions_v2';
 const ACTIVE_SESSION_KEY = 'customer_care_active_session_id_v2';
-const INITIAL_BOT_GREETING = "Hi, I'm Customer Care Bot! How can I help you today? 😊";
+const INITIAL_BOT_GREETING = "Hi, I'm Bot! How can I help you today? 😊";
 
 function createNewSession(): ChatSession {
   return {
@@ -535,7 +535,7 @@ export default function CustomerCareChat() {
                         <span className="w-2 h-2 rounded-full bg-indigo-600 loading-dot-2" />
                         <span className="w-2 h-2 rounded-full bg-purple-600 loading-dot-3" />
                         <span className="text-xs font-medium text-slate-500 ml-1.5 animate-pulse">
-                          Typing...
+                          Thinking...
                         </span>
                       </div>
                     ) : isUser ? (
@@ -553,29 +553,6 @@ export default function CustomerCareChat() {
               );
             })}
 
-            {/* Thinking / Processing State */}
-            {isThinking && (
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white shrink-0 shadow-2xs">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-4 h-4"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2" />
-                  </svg>
-                </div>
-                <div className="bg-[#EBF2FF] border border-[#DBEAFE] rounded-2xl rounded-tl-xs px-4 py-2.5 shadow-2xs flex items-center space-x-1.5">
-                  <span className="w-2 h-2 rounded-full bg-blue-600 loading-dot-1" />
-                  <span className="w-2 h-2 rounded-full bg-indigo-600 loading-dot-2" />
-                  <span className="w-2 h-2 rounded-full bg-purple-600 loading-dot-3" />
-                  <span className="text-xs font-medium text-slate-500 ml-1.5">
-                    Thinking...
-                  </span>
-                </div>
-              </div>
-            )}
 
             {/* Error Banner */}
             {error && (

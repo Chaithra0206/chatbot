@@ -53,7 +53,7 @@ export async function sendChat(
     headers['x-goog-api-key'] = apiKey;
   }
 
-  const response = await fetch(endpoint, {
+  let response = await fetch(endpoint, {
     method: 'POST',
     headers,
     body: JSON.stringify({
@@ -62,6 +62,23 @@ export async function sendChat(
       stream: true,
     }),
   });
+
+  // If 503 (temporary high demand) on Google Gemini, automatically fallback to lite model
+  if (response.status === 503 && endpoint.includes('googleapis.com')) {
+    const fallbackModel = model.includes('lite')
+      ? 'gemini-3.5-flash'
+      : 'gemini-3.5-flash-lite';
+
+    response = await fetch(endpoint, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        model: fallbackModel,
+        messages: fullMessages,
+        stream: true,
+      }),
+    });
+  }
 
   if (!response.ok) {
     const errorBody = await response.text().catch(() => '');
